@@ -12,4 +12,6 @@ export class ButtonsResponsibleForVehicleMovementComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  message: string = 'Hello';
+  
 }
