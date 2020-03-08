@@ -13,5 +13,7 @@ export class ButtonsResponsibleForVehicleMovementComponent implements OnInit {
   }
 
   message: string = 'Hello';
-  
+
+  actual_date: string = new Date().toDateString();
+
 }
