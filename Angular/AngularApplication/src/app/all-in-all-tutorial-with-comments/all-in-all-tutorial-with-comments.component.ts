@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-all-in-all-tutorial-with-comments',
@@ -49,19 +49,27 @@ export class AllInAllTutorialWithCommentsComponent implements OnInit {
     this.addTwoNumbers(this.someNumber, 12);
   }
 
-  // Looping with ngFor
+  // Looping with ngFor -> patrz .HTML
   // "Struktura" danych, dzięki niej nauczysz się używać *ngFor
   user: any = {
     name: "Arkadiusz",
     title: "Tytuł",
-    address: "Politechnika Łodzka",
+    address: "Politechnika Łódzka",
     phone: [
       '123-456-789',
       '987-654-321'
     ]
   };
 
-  // Using *ngIf
+  // Using *ngIf -> patrz .HTML
   learning_ngIf: number = 4;
 
+  // Using @Input
+  // Learn how to pass data to your components to 'parameterize' them. 
+  // Use the `@Input()` decorator to designate a component member variable 
+  // as an input and thus configure the component API.
+  // działa tak jak lista inicjalizująca w języku C++
+  @Input('TextToDisplay') inputedTextToDisplay: string;
+  // sprawdź plik app.component.html
+  // warto zajrzeć również pod ngOnInit()
 }
