@@ -6,14 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./buttons-responsible-for-vehicle-movement.component.css']
 })
 export class ButtonsResponsibleForVehicleMovementComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit(): void {
   }
-
-  message: string = 'Hello';
-
-  actual_date: string = new Date().toDateString();
 
 }
