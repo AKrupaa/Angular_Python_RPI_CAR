@@ -49,5 +49,19 @@ export class AllInAllTutorialWithCommentsComponent implements OnInit {
     this.addTwoNumbers(this.someNumber, 12);
   }
 
+  // Looping with ngFor
+  // "Struktura" danych, dzięki niej nauczysz się używać *ngFor
+  user: any = {
+    name: "Arkadiusz",
+    title: "Tytuł",
+    address: "Politechnika Łodzka",
+    phone: [
+      '123-456-789',
+      '987-654-321'
+    ]
+  };
+
+  // Using *ngIf
+  learning_ngIf: number = 4;
 
 }

@@ -4,4 +4,40 @@
     Aktualna data: {{date_message}}
 </p>
 
+<p>Wynik metody addTwoNumbers(1, 100)</p>
 {{ addTwoNumbers(1, 100) }}
+
+<p>Użycie wypisania ze "struktury" user poszczególnych pól</p>
+
+<!-- <br> przejście do nowej lini -->
+{{ user.name }} <br>  
+{{ user.title }} <br>
+{{ user.address }} <br>
+<!-- hardcodowane wypisanie wartości z user.phone -->
+{{ user.phone[0] }} <br>
+{{ user.phone[1] }} <br>
+
+<p>Utworzenie dwóch paragrafów z telefonem używając *ngFor</p>
+<!-- Using *ngFor -->
+<!-- *ngFor="let item of list" -->
+<!-- 
+    >let< jest to zmienna lokalna
+    >item< dowolna nazwa tej zmiennej, 
+    która będzie przyjmowała wartość z puli możliwych,
+    czyli >user.phone< 
+    Następnie wyświetlamy ją używając danej zmiennej, tj. {{ item }}        
+-->
+<p *ngFor="let item of user.phone">{{ item }}</p>
+
+<!-- Using *ngIf -->
+<!-- *ngIf="expression" -->
+<!-- zmienna learning_ngIf znajduje się w pliku all-in-all-tutorial-with-comments.component.ts -->
+<div>
+    <div *ngIf="learning_ngIf > 0">
+        <p> spełniony warunek </p>
+    </div>
+    <div *ngIf="learning_ngIf == 0 ">
+        <p> nie spełniony warunek </p>
+    </div>
+</div>
+
