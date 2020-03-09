@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { User } from './user.model';
+import { TutorialServiceService } from './tutorial-service.service';
 
 @Component({
   selector: 'app-all-in-all-tutorial-with-comments',
@@ -15,7 +16,11 @@ export class AllInAllTutorialWithCommentsComponent implements OnInit {
   // zmienna przechowująca liczbę 10
   someNumber: number = 10;
 
-  constructor() {
+  // Understanding dependency injection
+  constructor(private tutorialService: TutorialServiceService) {
+    // Understanding dependency injection
+    // sprawdz konsole w swojej przegladarce!
+    tutorialService.consoleLogWhichSaysThatServiceWorks(">dowolony dodatkowy tekst<");
 
     // async operation (`setInterval`) to dynamically update the date component's displayed value, 
     // so that it shows updates to the time value every second.
