@@ -44,3 +44,28 @@
 <!-- inputedTextToDisplay łączy się z app.component.html oraz z Using @Input -> plik .ts-->
 <!-- Using @Input -->
 {{ inputedTextToDisplay }}
+
+<br>
+<!-- tekst, który znika i pojawia się -->
+<!-- wykorzystanie eventów -->
+<button (click)="toggleCollapse()">Pojaw się/Zniknij</button>
+<div *ngIf="!isCollapsed">
+    królik
+</div>
+
+<br><br><br>
+<!-- Two way data binding with ngModel, sprawdz również app.module.ts -->
+<!-- [] oznacza aby poszukiwać zmiennej "intputedText" w komponencie -->
+<!-- działa tylko w jedną strone - odczytuje  -->
+
+<!-- <input type="text" [ngModel]="inputedText">  -->
+
+<!-- natomiast [()] działa w dwie strony ;) -->
+
+<!-- kojarzysz (click) ? 
+    działało na property w komponencie dopiero po wykonaniu czynnosci - czyli kliknieciu 
+    [] dziła tylko w chwili wygenerowania, czyli pobiera z komponentu i już
+    combo [()] pozwala na komunikację w dwie strony :-)
+-->
+<input type="text" [(ngModel)]="inputedText">
+{{ inputedText }}

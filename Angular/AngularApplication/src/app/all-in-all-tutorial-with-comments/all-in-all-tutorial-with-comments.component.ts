@@ -74,20 +74,13 @@ export class AllInAllTutorialWithCommentsComponent implements OnInit {
   // sprawdź plik app.component.html
   // warto zajrzeć również pod ngOnInit()
 
+  // wykorzystywanie eventów
+  isCollapsed: boolean = true;
 
-  // dalsza zabawa, dodanie modelu User -> plik ./user.model.ts
-  // userO: any;
-  // @Input('user') userObj: User;
-  
-  // printUserObj() {
-  //   this.userO = {
-  //     name: this.userObj.name,
-  //     designation: this.userObj.designation,
-  //     address: this.userObj.address,
-  //     phone: this.userObj.phone
-  //   }
-  //   };
+  toggleCollapse() {
+    this.isCollapsed = !this.isCollapsed;
+  }
 
-  // }
-
+  // Two way data binding with ngModel, sprawdz również app.module.ts
+  inputedText: string = "Initial text";
 }
