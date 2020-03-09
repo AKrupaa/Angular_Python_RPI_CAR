@@ -3,22 +3,23 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-// https://www.dotnetcurry.com/angularjs/1438/http-client-angular
-// Angular applications need an easy way to interact with these services over HTTP for data retrieval and updation. 
-// For this purpose, Angular provides the HttpClient service.
+// Making REST calls with HttpClient
 import  { HttpClientModule } from '@angular/common/http';
+// Component which allow to use buttons and send data through HttpClient to the back-end
 import { ButtonsResponsibleForVehicleMovementComponent } from './buttons-responsible-for-vehicle-movement/buttons-responsible-for-vehicle-movement.component';
 
 // tutorial
 import { AllInAllTutorialWithCommentsComponent } from './all-in-all-tutorial-with-comments/all-in-all-tutorial-with-comments.component'
 // Two way data binding with ngModel
 import { FormsModule } from '@angular/forms'
+// Understanding dependency injection
 import { TutorialServiceService } from './all-in-all-tutorial-with-comments/tutorial-service.service';
 
 @NgModule({
   // declarations zawierają wszystkie komponenty, które są częścią modułu
   declarations: [
     AppComponent,
+    // Component which allow to use buttons and send data through HttpClient to the back-end
     ButtonsResponsibleForVehicleMovementComponent,
     AllInAllTutorialWithCommentsComponent
   ],
@@ -26,6 +27,7 @@ import { TutorialServiceService } from './all-in-all-tutorial-with-comments/tuto
   imports: [
     BrowserModule,
     AppRoutingModule,
+    // Making REST calls with HttpClient
     HttpClientModule,
     // // Two way data binding with ngModel
     FormsModule
@@ -33,6 +35,7 @@ import { TutorialServiceService } from './all-in-all-tutorial-with-comments/tuto
   // providers zawierają wszystkie serwisy, które należą do modułu (AppModule) 
   providers: [
     // dodanie serwisu
+    // Understanding dependency injection
     TutorialServiceService
   ],
   bootstrap: [AppComponent]

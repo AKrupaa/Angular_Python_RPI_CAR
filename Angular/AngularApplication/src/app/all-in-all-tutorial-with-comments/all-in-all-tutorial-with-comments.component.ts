@@ -1,6 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { User } from './user.model';
 import { TutorialServiceService } from './tutorial-service.service';
+// Making REST calls with HttpClient
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-all-in-all-tutorial-with-comments',
@@ -16,8 +19,10 @@ export class AllInAllTutorialWithCommentsComponent implements OnInit {
   // zmienna przechowująca liczbę 10
   someNumber: number = 10;
 
-  // Understanding dependency injection
-  constructor(private tutorialService: TutorialServiceService) {
+  // Understanding dependency injection (tutorialService)
+  // Making REST calls with HttpClient (http)
+  constructor(private tutorialService: TutorialServiceService, private http: HttpClient) {
+
     // Understanding dependency injection
     // sprawdz konsole w swojej przegladarce!
     tutorialService.consoleLogWhichSaysThatServiceWorks(">dowolony dodatkowy tekst<");
@@ -34,6 +39,30 @@ export class AllInAllTutorialWithCommentsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    // Making REST calls with HttpClient
+    // making GET REQUEST
+    // this.http.get('URL');
+    // get() zwraca Observable
+    // teraz, obiekt obs otrzyma Observable z GET REQUEST tego URL https://api.github.com/users/koushikkothagal
+    // i teraz musisz powiedzieć subscribe() "Hej kiedy zrobisz to wyżej, wykonaj console.log()"
+    // jeszcze raz?
+    // Kiedy Observable skończy robotę, subscribe zostanie wykonane.
+    // Kiedy otrzymamy odpowiedź to ją wypiszemy, oraz podejrzymy argument (response),
+    // czyli zawartość tego co otrzymaliśmy - informacje z serwera.
+    let obs = this.http.get('https://api.github.com/users/koushikkothagal');
+    obs.subscribe((response) => {
+      console.log("Got the response");
+
+      console.log("");
+      console.log("");
+      console.log("");
+      // jest to struktura typu .json
+      // wejdz na strone https://api.github.com/users/koushikkothagal i sprawdź
+      // czy informacje się ze sobą pokrywają ;)
+      console.log(response);
+    });
+
   }
 
   // metoda addTwoNumbers(a: number, b: number) pozwala dodać dwie liczby
