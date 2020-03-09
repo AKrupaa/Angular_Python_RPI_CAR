@@ -13,13 +13,16 @@ import { ButtonsResponsibleForVehicleMovementComponent } from './buttons-respons
 import { AllInAllTutorialWithCommentsComponent } from './all-in-all-tutorial-with-comments/all-in-all-tutorial-with-comments.component'
 // Two way data binding with ngModel
 import { FormsModule } from '@angular/forms'
+import { TutorialServiceService } from './all-in-all-tutorial-with-comments/tutorial-service.service';
 
 @NgModule({
+  // declarations zawierają wszystkie komponenty, które są częścią modułu
   declarations: [
     AppComponent,
     ButtonsResponsibleForVehicleMovementComponent,
     AllInAllTutorialWithCommentsComponent
   ],
+  // imports zawierają wszystkie inne MODUŁY, które ten moduł (AppModule) zależy od
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -27,7 +30,11 @@ import { FormsModule } from '@angular/forms'
     // // Two way data binding with ngModel
     FormsModule
   ],
-  providers: [],
+  // providers zawierają wszystkie serwisy, które należą do modułu (AppModule) 
+  providers: [
+    // dodanie serwisu
+    TutorialServiceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
