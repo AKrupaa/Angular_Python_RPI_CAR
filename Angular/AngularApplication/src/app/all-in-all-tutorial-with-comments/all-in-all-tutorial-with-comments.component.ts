@@ -117,4 +117,17 @@ export class AllInAllTutorialWithCommentsComponent implements OnInit {
 
   // Two way data binding with ngModel, sprawdz również app.module.ts
   inputedText: string = "Initial text";
+
+  // GET search()
+  // app that makes REST calls to the Github API and looks up user information
+  userName: string = "";
+  response: any;
+  // metoda zwracająca informacje dot. użytkownia wpisanego .HTML -> <input type="text" [(ngModel)]="userName">
+  search() {
+    this.http.get("https://api.github.com/users/" + this.userName)
+    .subscribe((response) => {
+      this.response = response;
+      console.log(this.response);
+    });
+  }
 }

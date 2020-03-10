@@ -66,6 +66,27 @@
     działało na property w komponencie dopiero po wykonaniu czynnosci - czyli kliknieciu 
     [] dziła tylko w chwili wygenerowania, czyli pobiera z komponentu i już
     combo [()] pozwala na komunikację w dwie strony :-)
+    [(ngModel)]="binding"
 -->
 <input type="text" [(ngModel)]="inputedText">
 {{ inputedText }}
+
+<br><br>
+<!-- GET -->
+<!-- w input w .HTML możesz wpisać mój login: AKrupaa -->
+User name: <input type="text" [(ngModel)]="userName">
+<button (click) = "search()">Search</button>
+<!-- Można zadziałać za pomocą *ngIf lub używając response?.login -->
+<!-- <div *ngIf="response"> -->
+    <!-- Jeżeli response is undefined nawet nie próbuj dostać się do .login, 
+        tyle oznacza ten znak zapytania (?) -->
+    <!-- Oczywiście w tym wypadku *ngIf jest lepszą opcją, ponieważ nie będziemy widzieć
+    tych paragrafów pustych! Sprawdź to samemu ;) -->
+    <p>Login: {{ response?.login }}</p>
+    <p>ID: {{ response?.id }}</p>
+    <p>Followers: {{ response?.followers }}</p>
+    <p>Updated_at: {{ response?.updated_at }}</p>
+<!-- </div> -->
+
+
+
