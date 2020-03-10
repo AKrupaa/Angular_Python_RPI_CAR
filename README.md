@@ -16,3 +16,14 @@ Step 2: Run the application
         cd Angular
         cd AngularApplication
         ng serve --open
+
+
+If your project is done:
+    ng build
+    npm install http-server -g
+    http-server dist\AngularApplication
+
+If your project is done and you want to make it out of prod mode type:
+    ng build --prod
+    There is no need to >npm install http-server -g< if you have one
+    http-server dist\AngularApplication
